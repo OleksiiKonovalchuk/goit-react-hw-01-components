@@ -1,16 +1,24 @@
+import React from "react";
+import css from "./App.module.css";
+import Normalize from 'react-normalize';
+
+import Profile from "./user/Profile";
+import user from './user/user.json';
+import Statistics from "./statistics/Statistics";
+import data from "./statistics/data.json";
+import FriendList from './friends/FriendList';
+import friends from './friends/friends.json';
+import TransactionHistory from './transactions/TransactionHistory';
+import transactions from "./transactions/transactions.json"
 export const App = () => {
   return (
     <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+      className={css.App}
+    ><Normalize />
+      <Profile userName={user.username} tag={user.tag} location={user.location} avatarUrl={user.avatar} stats={user.stats} />
+      <Statistics title="Upload Stats" stats={data} />
+      <FriendList list={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
