@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./App.module.css";
-import Normalize from 'react-normalize';
 
 import Profile from "./user/Profile";
 import user from './user/user.json';
@@ -14,7 +13,7 @@ export const App = () => {
   return (
     <div
       className={css.App}
-    ><Normalize />
+    >
       <Profile userName={user.username} tag={user.tag} location={user.location} avatarUrl={user.avatar} stats={user.stats} />
       <Statistics title="Upload Stats" stats={data} />
       <FriendList list={friends} />
